@@ -19,6 +19,16 @@ Put this in the `<body>`:
 <body data-target='#yourNavElement' scroll-spy=''>
 ```
 
+Then make sure to add the `id` into `href` attribute of the `nav` item like below:
+
+```javascript
+<li>
+  <a href="#yourSectionId">
+    Chinese
+  </a>
+</li>
+```
+
 The `data-target` must be a unique element so it's safe to use `id` instead of `class`.
 
 And that's it.
