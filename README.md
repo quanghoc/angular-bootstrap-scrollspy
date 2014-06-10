@@ -3,6 +3,13 @@ Bootstrap Scrollspy Directive for Angular.js
 
 This is a replacement for Bootstrap Scrollspy in Angular.js because if you drop in default Bootstrap Scrollspy, it may act up due to refresh/render timing. Also I don't see anything available on the internet as of today as a good replacement. I wrote mine really quick and it is somewhat of a "hack" still. But it works for general use cases.
 
+## Demo
+
+![Demo](http://i.imgur.com/eO7ibMP.png)
+
+- Install [Jekyll](http://jekyllrb.com/) or `gem install jekyll`
+- `jekyll serve --watch`
+
 ## Known Limitations
 
 - I only coded for "vertical" scrolling.

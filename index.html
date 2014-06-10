@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang='en' ng-app='app'>
+  <head>
+    <meta charset='utf-8' />
+    <title>Angular Bootstrap Scrollspy Example</title>
+    <meta content='user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1' name='viewport' />
+    <meta content='' name='description' />
+    <meta content='' name='author' />
+    <link href='/css/main.css' rel='stylesheet' />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Fav and touch icons -->
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js'></script>
+    <script src='/js/app.js'></script>
+    <script src='/js/controllers.js'></script>
+    <script src='/js/directives.js'></script>
+  </head>
+  <body data-target='#AnchorList' scroll-spy=''>
+    <div class='container-left'>
+      <div class='sidebar-nav' ng-controller='AnchorListCtrl'>
+        <div>
+          <ul class='nav nav-pills nav-stacked' id='AnchorList'>
+            <li ng-class='{active: $index == 0}' ng-repeat='item in data'>
+              <a ng-href='#{{ item }}' scroll-to='{{ item }}'>
+                {{ item }}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class='container-main col-md-12' ng-controller='DocCtrl'>
+      <div>
+        <div class='grid' ng-repeat='category in data'>
+          <h1 id='{{ category.id }}'>
+            {{ category.title }}
+          </h1>
+          <div class='thumbnail' ng-repeat='item in category.detail'>
+            <a class='photo'>
+              <img ng-src='{{ item.image }}' />
+            </a>
+            <div class='caption'>
+              <h3 class='food-name'>
+                <a>
+                  {{ item.title }}
+                </a>
+              </h3>
+              <p class='restaurant-name'>
+                <a>
+                  {{ item.description }}
+                </a>
+              </p>
+            </div>
+          </div>
+          <a class='btn btn-primary btn-lg' ng-click='more($index)'>
+            Add More Items in {{ category.id }} ...
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
