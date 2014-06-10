@@ -23,17 +23,19 @@ See [Bootstrap Scrollspy Documentation] (http://getbootstrap.com/javascript/#scr
 Put this in the `<body>`:
 
 ```javascript
-<body data-target='#yourNavElement' scroll-spy=''>
+<body data-target='#yourUlElement' scroll-spy=''>
 ```
 
 Then make sure to add the `id` into `href` attribute of the `nav` item like below:
 
 ```javascript
-<li>
-  <a href="#yourSectionId">
-    Chinese
-  </a>
-</li>
+<ul id='yourUlElement'>
+  <li>
+    <a href="#yourSectionId">
+      Chinese
+    </a>
+  </li>
+</ul>
 ```
 
 The `data-target` must be a unique element so it's safe to use `id` instead of `class`.
