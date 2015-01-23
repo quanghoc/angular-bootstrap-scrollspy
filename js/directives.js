@@ -49,12 +49,12 @@ angular.module('app.directives', [])
   var process = function(scope, element, attrs) {
     var windowHeight = $window.innerHeight,
         windowTop = $window.scrollY,
-        $activeTarget;
+        $activeTarget = null;
 
     spies.map(function(item, index) {
       var pos = item.offset().top - windowTop;
 
-      if (pos < windowHeight) {
+      if (pos < windowHeight && pos > 0 && $activeTarget == null) {
         $activeTarget = targets.eq(index);
       }
     });
